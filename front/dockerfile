@@ -1,0 +1,16 @@
+# Usar una imagen de Node.js en lugar de Nginx para desarrollo
+FROM node:18
+
+WORKDIR /front
+
+# Instalar dependencias
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copiar todo (esto será reemplazado por volúmenes en tiempo de desarrollo)
+COPY . .
+
+EXPOSE 3000
+
+# Usar npm start para modo desarrollo
+CMD ["npm", "start"]

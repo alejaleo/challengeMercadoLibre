@@ -1,0 +1,43 @@
+# Node.js
+# Ignorar dependencias instaladas por npm o yarn
+back/node_modules/
+front/node_modules/
+node_modules/
+
+# Archivos generados por npm o yarn
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+
+# Build de aplicaciones frontend (React, por ejemplo)
+build/
+dist/
+
+# Docker
+# Ignorar archivos de Docker que no deberían ser versionados
+.docker/
+
+# Ignorar contenedores, imágenes y volúmenes generados por Docker
+**/container/
+**/image/
+**/volume/
+
+# Docker Compose
+docker-compose.override.yml
+docker-compose.yml*
+
+# Ignorar archivos de logs y PID
+*.log
+*.pid
+
+# Archivos generados por el sistema operativo
+.DS_Store        # macOS
+Thumbs.db         # Windows
+
+# Archivos temporales de editores (Vim, Emacs, etc.)
+*.swp
+*.swo
+
+# Archivos de configuración de Visual Studio Code (si usas VS Code)
+.vscode/ 
