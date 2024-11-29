@@ -14,18 +14,6 @@ yarn-error.log
 build/
 dist/
 
-# Docker
-# Ignorar archivos de Docker que no deberían ser versionados
-.docker/
-
-# Ignorar contenedores, imágenes y volúmenes generados por Docker
-**/container/
-**/image/
-**/volume/
-
-# Docker Compose
-docker-compose.override.yml
-docker-compose.yml*
 
 # Ignorar archivos de logs y PID
 *.log
