@@ -15,11 +15,17 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
       - backend
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root --password=$MYSQLDB_ROOT_PASSWORD || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     
   
   back:
     depends_on:
-      - mysqldb
+      mysqldb:
+        condition: service_healthy
     build: ./back
     restart: unless-stopped
     env_file: ./.env
